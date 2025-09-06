@@ -83,7 +83,7 @@ const About = () => {
               {/* Profile Image */}
               <div className="absolute inset-2 rounded-full overflow-hidden ring-4 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow">
                 <Image
-                  src="/anil-profile.jpg"
+                  src="/anil-profile.png"
                   alt="Anil Chhetri - AI & ML Student"
                   fill
                   className="object-cover object-center"

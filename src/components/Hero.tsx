@@ -85,7 +85,7 @@ const Hero = () => {
               {/* Profile image */}
               <div className="absolute inset-2 rounded-full overflow-hidden ring-2 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow">
                 <Image
-                  src="/anil-profile.jpg"
+                  src="/anil-profile.png"
                   alt="Anil Chhetri - AI & ML Enthusiast"
                   fill
                   className="object-cover object-center"
