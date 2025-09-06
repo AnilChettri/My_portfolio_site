@@ -74,7 +74,7 @@ const About = () => {
             animate={inView ? "visible" : "hidden"}
             className="relative flex justify-center px-8 sm:px-6 md:px-4 lg:px-0"
           >
-            <div className="relative mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-60 md:h-60 lg:w-72 lg:h-72 xl:w-80 xl:h-80 max-w-[70vw] max-h-[70vw]">
+            <div className="relative mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 xl:w-72 xl:h-72 max-w-[65vw] max-h-[65vw]">
               {/* Glowing Border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-1 animate-spin-slow">
                 <div className="w-full h-full rounded-full bg-black" />
@@ -90,7 +90,7 @@ const About = () => {
                   className="w-full h-full object-cover object-center rounded-full"
                   quality={95}
                   priority
-                  sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 224px, (max-width: 1280px) 288px, 320px"
+                  sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 208px, (max-width: 1280px) 256px, 288px"
                 />
                 {/* Professional overlay for better contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
