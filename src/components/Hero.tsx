@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Mail } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation'
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 const Hero = () => {
