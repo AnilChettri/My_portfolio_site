@@ -1,0 +1,18 @@
+# Project Images
+
+This folder contains project images referenced in the portfolio.
+
+## Missing Images:
+- expense-tracker-dashboard.png
+- expense-tracker-add.png  
+- expense-tracker-analytics.png
+- expense-tracker-categories.png
+- expense-tracker-reports.png
+- expense-tracker-settings.png
+- aquaguard-main.png
+- aquaguard-details.png
+- default-project.png
+
+Please add the actual project images here before deploying to production.
+
+For development purposes, you can create placeholder images or use actual project screenshots.
