@@ -35,7 +35,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -66,15 +66,15 @@ const About = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center">
           {/* Profile Image */}
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="relative flex justify-center items-center px-8 sm:px-6 md:px-4 lg:px-0 order-2 lg:order-1"
+            className="relative flex justify-center items-center px-4 py-8 sm:px-6 sm:py-0 md:px-4 lg:px-0 order-2 lg:order-1"
           >
-            <div className="relative mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 xl:w-72 xl:h-72 max-w-[65vw] max-h-[65vw]">
+            <div className="relative mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 xl:w-64 xl:h-64 max-w-[50vw] max-h-[50vw]">
               {/* Glowing Border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-1 animate-spin-slow">
                 <div className="w-full h-full rounded-full bg-black" />
@@ -90,7 +90,7 @@ const About = () => {
                   className="w-full h-full object-cover object-[center_20%] rounded-full"
                   quality={95}
                   priority
-                  sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 208px, (max-width: 1280px) 256px, 288px"
+                  sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 176px, (max-width: 1280px) 224px, 256px"
                 />
                 {/* Professional overlay for better contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
