@@ -72,9 +72,9 @@ const About = () => {
             variants={itemVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="relative flex justify-center px-6 sm:px-4 md:px-0"
+            className="relative flex justify-center px-8 sm:px-6 md:px-4 lg:px-0"
           >
-            <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 max-w-full">
+            <div className="relative mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 max-w-[70vw] max-h-[70vw]">
               {/* Glowing Border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-1 animate-spin-slow">
                 <div className="w-full h-full rounded-full bg-black" />
