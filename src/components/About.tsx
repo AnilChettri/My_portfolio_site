@@ -66,15 +66,15 @@ const About = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Profile Image */}
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="relative"
+            className="relative flex justify-center px-4 sm:px-0"
           >
-            <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
+            <div className="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 max-w-full">
               {/* Glowing Border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-1 animate-spin-slow">
                 <div className="w-full h-full rounded-full bg-black" />
@@ -111,7 +111,7 @@ const About = () => {
                   Explorer
                 </span>
               </h3>
-              <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed text-lg">
+              <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed text-base sm:text-lg">
                 <p>
                   Currently pursuing my Bachelor&apos;s in Artificial Intelligence & Machine Learning at 
                   Sri Sairam College of Engineering, Bangalore. I believe in learning through building 
