@@ -57,6 +57,15 @@ const Projects = () => {
     
     const fetchProjects = async () => {
       try {
+        // Check if Supabase client is available
+        if (!supabase) {
+          console.log('Supabase not configured, using fallback data')
+          setProjects(fallbackProjects)
+          setError('Using sample data - Supabase not configured')
+          setLoading(false)
+          return
+        }
+
         const { data, error } = await supabase
           .from('projects')
           .select('*')
@@ -66,7 +75,7 @@ const Projects = () => {
         if (error) {
           console.error('Error fetching projects:', error)
           setProjects(fallbackProjects)
-          setError('Using sample data - Supabase connection not available')
+          setError('Using sample data - Supabase connection error')
         } else {
           setProjects(data || fallbackProjects)
         }
