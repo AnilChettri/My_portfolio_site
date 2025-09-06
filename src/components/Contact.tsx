@@ -169,7 +169,7 @@ const Contact = () => {
               Connect
             </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed">
             Have a project in mind? Want to collaborate? Or just want to say hi? 
             I&apos;d love to hear from you. Drop me a message below!
           </p>
@@ -185,7 +185,7 @@ const Contact = () => {
           >
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-bold mb-6 text-black dark:text-white">Get in Touch</h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-lg">
                 I&apos;m always open to discussing new opportunities, creative projects, 
                 or potential collaborations. Whether you&apos;re looking for a developer 
                 to bring your ideas to life or just want to connect, feel free to reach out!
@@ -199,7 +199,7 @@ const Contact = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Email</p>
                   <p className="text-black dark:text-white font-medium">chettrianil899@gmail.com</p>
                 </div>
               </div>
@@ -209,7 +209,7 @@ const Contact = () => {
                   <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Response Time</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">Response Time</p>
                   <p className="text-black dark:text-white font-medium">Usually within 24 hours</p>
                 </div>
               </div>
@@ -253,7 +253,7 @@ const Contact = () => {
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   Your Name
                 </label>
                 <div className="relative">
@@ -273,7 +273,7 @@ const Contact = () => {
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   Email Address
                 </label>
                 <div className="relative">
@@ -293,7 +293,7 @@ const Contact = () => {
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   Message
                 </label>
                 <div className="relative">
@@ -359,7 +359,7 @@ const Contact = () => {
 
             {/* Alternative Contact Info */}
             <div className="mt-8 pt-6 border-t border-white/10">
-              <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-center text-sm text-gray-600 dark:text-gray-300">
                 Prefer email directly?{' '}
                 <a
                   href="mailto:chettrianil899@gmail.com"

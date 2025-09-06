@@ -60,7 +60,7 @@ const About = () => {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-gray-700 dark:text-gray-300 text-xl max-w-2xl mx-auto"
           >
             Passionate developer creating innovative solutions
           </motion.p>
@@ -81,7 +81,7 @@ const About = () => {
               </div>
               
               {/* Profile Image */}
-              <div className="absolute inset-2 rounded-full overflow-hidden ring-4 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow">
+              <div className="absolute inset-2 rounded-full overflow-hidden ring-4 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow bg-gray-300 dark:bg-gray-700">
                 <Image
                   src="/anil-profile.png"
                   alt="Anil Chhetri - AI & ML Student"
@@ -127,7 +127,7 @@ const About = () => {
                   Explorer
                 </span>
               </h3>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed text-lg">
                 <p>
                   Currently pursuing my Bachelor&apos;s in Artificial Intelligence & Machine Learning at 
                   Sri Sairam College of Engineering, Bangalore. I believe in learning through building 

@@ -83,7 +83,7 @@ const Hero = () => {
               </div>
               
               {/* Profile image */}
-              <div className="absolute inset-2 rounded-full overflow-hidden ring-2 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow">
+              <div className="absolute inset-2 rounded-full overflow-hidden ring-2 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow bg-gray-300 dark:bg-gray-700">
                 <Image
                   src="/anil-profile.png"
                   alt="Anil Chhetri - AI & ML Enthusiast"
@@ -115,7 +115,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-neon-blue text-lg sm:text-xl mb-4 font-medium h-8"
+            className="text-neon-blue text-xl sm:text-2xl mb-4 font-medium h-8"
           >
             <TypeAnimation
               sequence={[
@@ -131,7 +131,7 @@ const Hero = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-black dark:text-white"
+              className="text-gray-800 dark:text-white font-medium"
             />
           </motion.div>
 
@@ -170,7 +170,7 @@ const Hero = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -242,7 +242,7 @@ const Hero = () => {
         >
           <motion.button
             onClick={() => scrollToSection('about')}
-            className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-neon-blue transition-colors cursor-pointer"
+            className="flex flex-col items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-neon-blue transition-colors cursor-pointer"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
