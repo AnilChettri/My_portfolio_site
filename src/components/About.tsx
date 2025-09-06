@@ -35,7 +35,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -72,9 +72,9 @@ const About = () => {
             variants={itemVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="relative flex justify-center px-4 sm:px-0"
+            className="relative flex justify-center px-6 sm:px-4 md:px-0"
           >
-            <div className="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 max-w-full">
+            <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 max-w-full">
               {/* Glowing Border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-1 animate-spin-slow">
                 <div className="w-full h-full rounded-full bg-black" />
