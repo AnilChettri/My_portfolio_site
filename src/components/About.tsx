@@ -72,7 +72,7 @@ const About = () => {
             variants={itemVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="relative flex justify-center px-8 sm:px-6 md:px-4 lg:px-0"
+            className="relative flex justify-center items-center px-8 sm:px-6 md:px-4 lg:px-0 order-2 lg:order-1"
           >
             <div className="relative mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 xl:w-72 xl:h-72 max-w-[65vw] max-h-[65vw]">
               {/* Glowing Border */}
@@ -87,7 +87,7 @@ const About = () => {
                   alt="Anil Chhetri - AI & ML Student"
                   width={512}
                   height={512}
-                  className="w-full h-full object-cover object-center rounded-full"
+                  className="w-full h-full object-cover object-[center_20%] rounded-full"
                   quality={95}
                   priority
                   sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 208px, (max-width: 1280px) 256px, 288px"
@@ -104,7 +104,7 @@ const About = () => {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="space-y-6"
+            className="space-y-6 order-1 lg:order-2"
           >
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-black dark:text-white">
