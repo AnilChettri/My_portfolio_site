@@ -86,16 +86,6 @@ export default function ThemeToggle() {
         </div>
       </button>
 
-      {/* Tooltip */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="absolute -bottom-10 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded whitespace-nowrap">
-          {theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
-        </div>
-      </motion.div>
     </motion.div>
   )
 }
