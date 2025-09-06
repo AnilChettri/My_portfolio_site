@@ -81,35 +81,19 @@ const About = () => {
               </div>
               
               {/* Profile Image */}
-              <div className="absolute inset-2 rounded-full overflow-hidden ring-4 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow bg-gray-300 dark:bg-gray-700">
+              <div className="absolute inset-3 rounded-full overflow-hidden ring-4 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow">
                 <Image
                   src="/anil-profile.png"
                   alt="Anil Chhetri - AI & ML Student"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 320px, 384px"
+                  width={384}
+                  height={384}
+                  className="w-full h-full object-cover object-center rounded-full"
                   priority
                 />
                 {/* Professional overlay for better contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
               </div>
               
-              {/* Floating Elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-neon-blue rounded-full opacity-80"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-neon-purple rounded-full opacity-80"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute top-1/2 -right-8 w-4 h-4 bg-neon-pink rounded-full opacity-60"
-                animate={{ x: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              />
             </div>
           </motion.div>
 

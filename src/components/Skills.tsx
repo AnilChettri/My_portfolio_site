@@ -170,28 +170,6 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        {/* Additional Floating Skills */}
-        <div className="relative mt-20">
-          <motion.div
-            className="absolute top-0 left-1/4 transform -translate-x-1/2"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            <div className="px-4 py-2 glass rounded-full border border-neon-blue/30">
-              <span className="text-neon-blue font-medium">Full Stack</span>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            className="absolute top-0 right-1/4 transform translate-x-1/2"
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 5, repeat: Infinity }}
-          >
-            <div className="px-4 py-2 glass rounded-full border border-neon-purple/30">
-              <span className="text-neon-purple font-medium">Problem Solver</span>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   )

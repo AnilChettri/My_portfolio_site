@@ -16,48 +16,6 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -100, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute top-3/4 right-1/4 w-72 h-72 bg-gradient-to-r from-neon-pink/20 to-neon-green/20 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={{
-            x: [0, -150, 0],
-            y: [0, 100, 0],
-            scale: [1, 0.8, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/3 w-48 h-48 bg-gradient-to-r from-accent-400/20 to-primary-400/20 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={{
-            x: [0, 80, 0],
-            y: [0, -80, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
 
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
@@ -69,47 +27,6 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Floating Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: 50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, type: "spring", bounce: 0.4 }}
-            className="relative mb-8"
-          >
-            <div className="relative w-32 h-32 mx-auto">
-              {/* Glowing ring */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-1 animate-spin-slow">
-                <div className="w-full h-full rounded-full bg-black" />
-              </div>
-              
-              {/* Profile image */}
-              <div className="absolute inset-2 rounded-full overflow-hidden ring-2 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow bg-gray-300 dark:bg-gray-700">
-                <Image
-                  src="/anil-profile.png"
-                  alt="Anil Chhetri - AI & ML Enthusiast"
-                  fill
-                  className="object-cover object-center"
-                  sizes="128px"
-                  priority
-                />
-                {/* Overlay for better contrast on both themes */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              </div>
-              
-              {/* Floating particles */}
-              <motion.div
-                className="absolute -top-2 -right-2 w-4 h-4 bg-neon-blue rounded-full opacity-80"
-                animate={{ y: [0, -10, 0], scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute -bottom-2 -left-2 w-3 h-3 bg-neon-purple rounded-full opacity-60"
-                animate={{ y: [0, 8, 0], scale: [1, 0.8, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              />
-            </div>
-          </motion.div>
-
           {/* Greeting with Typing Animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
