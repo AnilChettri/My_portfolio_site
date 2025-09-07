@@ -154,7 +154,7 @@ const Certifications = () => {
             <motion.div
               key={cert.id}
               variants={cardVariants}
-              className="group relative glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 tilt-card"
+              className="group relative bg-white/80 dark:bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300 tilt-card"
               whileHover={{ 
                 scale: 1.05, 
                 rotateY: 5, 
@@ -168,7 +168,7 @@ const Certifications = () => {
               {/* Verification Badge */}
               {cert.verified && (
                 <div className="absolute -top-2 -right-2 z-10">
-                  <div className="w-8 h-8 bg-gradient-to-r from-neon-green to-neon-blue rounded-full flex items-center justify-center border-2 border-black">
+                  <div className="w-8 h-8 bg-gradient-to-r from-neon-green to-neon-blue rounded-full flex items-center justify-center border-2 border-white dark:border-black">
                     <Check className="w-4 h-4 text-white" />
                   </div>
                 </div>
@@ -262,21 +262,21 @@ const Certifications = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-8 p-6 glass rounded-2xl border border-white/10">
+          <div className="inline-flex items-center gap-8 p-6 bg-white/80 dark:bg-black/20 backdrop-blur-sm rounded-2xl border border-black/10 dark:border-white/10">
             <div className="text-center">
               <div className="text-3xl font-bold text-neon-green mb-1">
                 {certifications.length}+
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Certifications</div>
             </div>
-            <div className="w-px h-12 bg-white/20" />
+            <div className="w-px h-12 bg-black/20 dark:bg-white/20" />
             <div className="text-center">
               <div className="text-3xl font-bold text-neon-blue mb-1">
                 {certifications.filter(c => c.verified).length}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Verified</div>
             </div>
-            <div className="w-px h-12 bg-white/20" />
+            <div className="w-px h-12 bg-black/20 dark:bg-white/20" />
             <div className="text-center">
               <div className="text-3xl font-bold text-neon-purple mb-1">
                 {new Set(certifications.flatMap(c => c.skills)).size}+

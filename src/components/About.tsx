@@ -76,24 +76,22 @@ const About = () => {
           >
             <div className="relative mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 xl:w-64 xl:h-64 max-w-[50vw] max-h-[50vw]">
               {/* Glowing Border */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-1 animate-spin-slow">
-                <div className="w-full h-full rounded-full bg-black" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-0.5 animate-spin-slow">
+                <div className="w-full h-full rounded-full bg-white dark:bg-black" />
               </div>
               
               {/* Profile Image */}
-              <div className="absolute inset-3 rounded-full overflow-hidden ring-4 ring-white/20 dark:ring-white/10 backdrop-blur-sm professional-image ring-glow">
+              <div className="absolute inset-1 rounded-full overflow-hidden backdrop-blur-sm">
                 <Image
                   src="/anil-profile.png"
                   alt="Anil Chhetri - AI & ML Student"
                   width={512}
                   height={512}
-                  className="w-full h-full object-cover object-[center_20%] rounded-full"
+                  className="w-full h-full object-cover object-center rounded-full"
                   quality={95}
                   priority
                   sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 176px, (max-width: 1280px) 224px, 256px"
                 />
-                {/* Professional overlay for better contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
               </div>
               
             </div>

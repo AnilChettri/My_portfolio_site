@@ -180,18 +180,18 @@ const Projects = () => {
           /* Loading State */
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="glass p-6 rounded-xl border border-white/10 animate-pulse">
-                <div className="w-full h-48 bg-white/10 rounded-lg mb-4" />
-                <div className="h-6 bg-white/10 rounded mb-2" />
-                <div className="h-4 bg-white/10 rounded mb-4" />
+              <div key={i} className="bg-white/80 dark:bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-black/10 dark:border-white/10 animate-pulse">
+                <div className="w-full h-48 bg-black/10 dark:bg-white/10 rounded-lg mb-4" />
+                <div className="h-6 bg-black/10 dark:bg-white/10 rounded mb-2" />
+                <div className="h-4 bg-black/10 dark:bg-white/10 rounded mb-4" />
                 <div className="flex gap-2 mb-4">
-                  <div className="h-6 w-16 bg-white/10 rounded" />
-                  <div className="h-6 w-16 bg-white/10 rounded" />
-                  <div className="h-6 w-16 bg-white/10 rounded" />
+                  <div className="h-6 w-16 bg-black/10 dark:bg-white/10 rounded" />
+                  <div className="h-6 w-16 bg-black/10 dark:bg-white/10 rounded" />
+                  <div className="h-6 w-16 bg-black/10 dark:bg-white/10 rounded" />
                 </div>
                 <div className="flex gap-2">
-                  <div className="h-8 w-20 bg-white/10 rounded" />
-                  <div className="h-8 w-20 bg-white/10 rounded" />
+                  <div className="h-8 w-20 bg-black/10 dark:bg-white/10 rounded" />
+                  <div className="h-8 w-20 bg-black/10 dark:bg-white/10 rounded" />
                 </div>
               </div>
             ))}
@@ -210,7 +210,7 @@ const Projects = () => {
                   <motion.div
                     key={project.id}
                     variants={cardVariants}
-                    className="group relative glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-500 tilt-card overflow-hidden"
+                    className="group relative bg-white/80 dark:bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 tilt-card overflow-hidden"
                     whileHover={{ 
                       scale: 1.02, 
                       rotateY: 2, 
@@ -242,17 +242,17 @@ const Projects = () => {
                     <div className="space-y-4">
                       <div className="flex items-start justify-between">
                         <div>
-                          <h3 className="text-2xl font-bold text-white group-hover:text-neon-purple transition-colors">
+                          <h3 className="text-2xl font-bold text-black dark:text-white group-hover:text-neon-purple transition-colors">
                             {project.title}
                           </h3>
-                          <div className="flex items-center gap-2 text-sm text-gray-400 mt-1">
+                          <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mt-1">
                             <Calendar className="w-4 h-4" />
                             <span>{project.year}</span>
                           </div>
                         </div>
                       </div>
 
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                         {project.summary}
                       </p>
 
@@ -293,8 +293,8 @@ const Projects = () => {
                         <button
                           onClick={() => openGallery(project)}
                           className={cn(
-                            "flex items-center gap-2 px-6 py-3 glass border border-white/20 rounded-lg text-white font-medium",
-                            "magnetic-btn hover:bg-white/10 transition-all duration-300"
+                            "flex items-center gap-2 px-6 py-3 glass border border-black/20 dark:border-white/20 rounded-lg text-black dark:text-white font-medium",
+                            "magnetic-btn hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
                           )}
                         >
                           <ExternalLink className="w-4 h-4" />
