@@ -136,8 +136,8 @@ const About = () => {
               className="flex flex-col sm:flex-row gap-4 pt-6"
             >
               <a
-                href="/Anil_Chhetri_Resume.pdf"
-                download="Anil_Chhetri_Resume.pdf"
+                href="/Anil_Chhetri_Resume_Updated.pdf"
+                download="Anil_Chhetri_Resume_Updated.pdf"
                 className={cn(
                   "group relative inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium",
                   "magnetic-btn",
