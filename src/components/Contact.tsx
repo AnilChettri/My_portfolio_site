@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Mail, Send, User, MessageSquare, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 import { useState, useRef, FormEvent } from 'react'
-// import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 import { cn } from '@/lib/utils'
 
 interface FormData {
@@ -70,17 +70,15 @@ const Contact = () => {
     })
 
     try {
-      // EmailJS configuration - you'll need to set these up
-      // const serviceId = 'your_service_id' // Replace with your EmailJS service ID
-      // const templateId = 'your_template_id' // Replace with your EmailJS template ID  
-      // const publicKey = 'your_public_key' // Replace with your EmailJS public key
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || ''
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || ''
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
 
-      // For demonstration, we'll show success after a delay
-      // In production, you would use the actual EmailJS configuration
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS credentials are not configured')
+      }
 
-      // Uncomment this when you have EmailJS configured:
-      /*
       await emailjs.send(
         serviceId,
         templateId,
@@ -92,7 +90,6 @@ const Contact = () => {
         },
         publicKey
       )
-      */
 
       setStatus({
         type: 'success',

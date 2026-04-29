@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowDown, Github, Mail } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation'
 import { cn } from '@/lib/utils'
+import Scene3D from './Scene3D'
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -16,8 +17,8 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+      {/* 3D Background */}
+      <Scene3D />
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
