@@ -8,7 +8,7 @@ const StructuredData = () => {
     url: 'https://anilchhetri.dev',
     sameAs: [
       'https://github.com/AnilChettri',
-      'https://www.linkedin.com/in/anil-chhetri-880a8b253/',
+      'https://www.linkedin.com/in/anil-chettri-880a8b253/',
     ],
     knowsAbout: [
       'Python',

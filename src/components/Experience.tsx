@@ -14,23 +14,23 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: 'Machine Learning Intern',
-      company: 'Pantech E Limited',
-      period: 'May 2023 - June 2023',
-      location: 'Bangalore, Karnataka',
-      description: 'Developed machine learning models for real-world applications, focusing on supervised learning techniques. Gained hands-on experience with key ML libraries such as Scikit-learn and TensorFlow.',
-      skills: ['Python', 'TensorFlow', 'Scikit-learn', 'Data Preprocessing', 'Supervised Learning'],
+      role: 'Data Analyst Intern',
+      company: 'PySpiders',
+      period: 'Jan 2026 - Apr 2026',
+      location: 'Bangalore, India',
+      description: 'Used Python and SQL to clean, transform, and analyse structured datasets for reporting and business insights. Worked on machine learning workflows involving preprocessing, model training, and performance evaluation. Built reports and performed data analysis for simulated business scenarios.',
+      skills: ['Python', 'SQL', 'Data Analysis', 'Machine Learning', 'Reporting'],
       type: 'Internship',
       current: false,
     },
     {
       id: 2,
-      role: 'Python Developer Intern',
-      company: 'MotionCut',
-      period: 'July 2024 - August 2024',
-      location: 'Remote',
-      description: 'Created an Expense Tracker application using Python, implementing categorization and analysis of expenses. Enhanced the user interface using HTML and CSS, ensuring a responsive and intuitive experience.',
-      skills: ['Python', 'HTML', 'CSS', 'Data Analysis', 'UI/UX Design'],
+      role: 'Software & Data Intern',
+      company: 'CyberXDelta',
+      period: 'Dec 2025 - Feb 2026',
+      location: 'Bangalore, India',
+      description: 'Developed dashboards to monitor system performance and access activity. Processed datasets using Python and SQL for KPI tracking and reporting. Integrated REST APIs between dashboards and backend services. Built frontend analytics components using Next.js for access activity visualisation.',
+      skills: ['Python', 'SQL', 'Next.js', 'REST APIs', 'Dashboarding'],
       type: 'Internship',
       current: false,
     },
@@ -38,10 +38,10 @@ const Experience = () => {
       id: 3,
       role: 'AI Developer Intern',
       company: 'AskMeIdentity',
-      period: 'July 2025 - Nov 2025',
-      location: 'Remote',
-      description: 'Working on artificial intelligence solutions and machine learning implementations. Developing innovative AI-powered applications and contributing to cutting-edge projects.',
-      skills: ['Python', 'AI', 'Machine Learning', 'Deep Learning', 'Data Science'],
+      period: 'Jul 2025 - Nov 2025',
+      location: 'Bangalore, India',
+      description: 'Automated IAM workflows using n8n for internal access management, replicating provisioning and de-provisioning lifecycle processes. Implemented authentication and authorisation flows using industry-standard federation protocols (OIDC and OAuth 2.0). Integrated Microsoft Entra ID with a React Native application for enterprise SSO. Worked with RBAC, provisioning, de-provisioning, and identity lifecycle concepts aligned with IGA best practices.',
+      skills: ['n8n', 'OIDC', 'OAuth 2.0', 'Microsoft Entra ID', 'RBAC', 'IGA'],
       type: 'Internship',
       current: false,
     },
@@ -57,8 +57,8 @@ const Experience = () => {
     },
   }
 
-  const cardVariants = {
-    hidden: { opacity: 0, x: -50 },
+  const createCardVariants = (index: number) => ({
+    hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
     visible: {
       opacity: 1,
       x: 0,
@@ -67,7 +67,7 @@ const Experience = () => {
         ease: [0.6, -0.05, 0.01, 0.99] as [number, number, number, number],
       },
     },
-  }
+  })
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -111,7 +111,7 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
-                variants={cardVariants}
+                variants={createCardVariants(index)}
                 className={cn(
                   "relative flex items-center",
                   index % 2 === 0 ? "md:justify-start" : "md:justify-end"
@@ -215,7 +215,7 @@ const Experience = () => {
           className="text-center mt-16"
         >
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Interested in working together?
+            Interested in identity security or collaborating?
           </p>
           <button
             onClick={() => {

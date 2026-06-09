@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Award, Calendar, ExternalLink, Check } from 'lucide-react'
+import { Award, Calendar, Check } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 import { cn } from '@/lib/utils'
 
@@ -15,81 +15,75 @@ const Certifications = () => {
   const certifications = [
     {
       id: 1,
-      title: 'Python for Data Science and AI',
-      issuer: 'IBM SkillsBuild',
-      date: '2025',
-      description: 'Comprehensive Python programming certification covering data science fundamentals, AI applications, and practical programming skills.',
-      skills: ['Python', 'Data Science', 'AI Programming', 'Problem Solving'],
-      credentialId: 'PY0101EN',
+      title: 'SailPoint Leader: Identity Security',
+      issuer: 'SailPoint',
+      date: '2026',
+      description: 'Earned SailPoint ISC Leader Certificate demonstrating foundational IAM governance expertise including identity lifecycle, access governance, RBAC, and compliance frameworks.',
+      skills: ['SailPoint ISC', 'IAM Governance', 'Identity Lifecycle', 'RBAC', 'Access Governance'],
+      credentialId: 'SAILPOINT-ISC-2026',
       verified: true,
-      logo: '🐍',
+      logo: '🔐',
       color: 'from-blue-500 to-cyan-500',
-      certificateUrl: '/certificates/ibm-python-certificate.pdf',
     },
     {
       id: 2,
-      title: 'Data Analytics Essentials',
-      issuer: 'IBM/Cisco',
-      date: '2025',
-      description: 'Advanced data analytics certification covering statistical analysis, data visualization, and business intelligence techniques.',
-      skills: ['Data Analytics', 'Statistics', 'Data Visualization', 'Business Intelligence'],
-      credentialId: 'DA-ESSENTIALS-2025',
+      title: 'NHI Fundamentals',
+      issuer: 'OASIS',
+      date: '2026',
+      description: 'Certification covering Non-Human Identity fundamentals, including machine identities, service accounts, and automated identity management in modern enterprise environments.',
+      skills: ['NHI', 'Machine Identities', 'Service Accounts', 'Identity Management'],
+      credentialId: 'NHI-FUND-2026',
       verified: true,
-      logo: '📈',
+      logo: '🛡️',
       color: 'from-green-500 to-emerald-500',
-      certificateUrl: '/certificates/data-analytics-essentials.pdf',
     },
     {
       id: 3,
-      title: 'Machine Learning Fundamentals',
-      issuer: 'Professional Institute',
-      date: '2023',
-      description: 'Comprehensive machine learning certification covering algorithms, model training, evaluation, and practical applications.',
-      skills: ['Machine Learning', 'Algorithms', 'Model Training', 'Data Analysis'],
-      credentialId: 'ML-FUND-2023',
+      title: 'Identity Security Certified Administrator',
+      issuer: 'CyberXdelta',
+      date: '2026',
+      description: 'Professional certification in identity security administration covering access management, security policies, and enterprise identity infrastructure.',
+      skills: ['Identity Security', 'Access Management', 'Security Policies', 'IAM Admin'],
+      credentialId: 'CX-ADMIN-2026',
       verified: true,
-      logo: '🤖',
+      logo: '⚙️',
       color: 'from-purple-500 to-pink-500',
-      certificateUrl: '/certificates/machine-learning-certificate.pdf',
     },
     {
       id: 4,
-      title: 'Building AI Literacy',
-      issuer: 'LinkedIn Learning',
-      date: '2024',
-      description: 'Foundation course in artificial intelligence literacy, covering AI principles, applications, and ethical considerations.',
-      skills: ['AI Literacy', 'AI Ethics', 'AI Applications', 'Technology Awareness'],
-      credentialId: 'AI-LIT-2024',
+      title: 'ISC2 CC Course Conclusion & Final Assessment Validation',
+      issuer: 'ISC2',
+      date: '2026',
+      description: 'Completed ISC2 Certified in Cybersecurity (CC) course curriculum and passed final assessment validation covering cybersecurity principles, risk management, and security operations.',
+      skills: ['Cybersecurity', 'Risk Management', 'Security Operations', 'Incident Response'],
+      credentialId: 'ISC2-CC-2026',
       verified: true,
-      logo: '🧠',
+      logo: '🔒',
       color: 'from-indigo-500 to-purple-500',
-      certificateUrl: '/certificates/ai-literacy-certificate.pdf',
     },
     {
       id: 5,
-      title: 'Machine Learning Internship',
-      issuer: 'Pantech E Limited',
-      date: '2023',
-      description: 'Practical internship certification in machine learning, covering real-world project development and supervised learning techniques.',
-      skills: ['ML Projects', 'Supervised Learning', 'TensorFlow', 'Scikit-learn'],
-      credentialId: 'PANTECH-ML-2023',
+      title: 'Python for Data Science',
+      issuer: 'IBM',
+      date: '2025',
+      description: 'Completed IBM Python certification covering Python programming fundamentals, data structures, and analytical libraries for data science applications.',
+      skills: ['Python', 'Data Science', 'NumPy', 'Pandas', 'Data Analysis'],
+      credentialId: 'IBM-PY-2025',
       verified: true,
-      logo: '🎓',
-      color: 'from-orange-500 to-red-500',
-      certificateUrl: '/certificates/pantech-internship-certificate.pdf',
+      logo: '🐍',
+      color: 'from-yellow-500 to-orange-500',
     },
     {
       id: 6,
-      title: 'Responsible AI Principles',
-      issuer: 'LinkedIn Learning',
-      date: '2024',
-      description: 'Advanced course on responsible AI development, covering ethical AI principles and practical applications in real-world scenarios.',
-      skills: ['Responsible AI', 'AI Ethics', 'Bias Prevention', 'AI Governance'],
-      credentialId: 'RESP-AI-2024',
+      title: 'Responsible AI',
+      issuer: 'Google',
+      date: '2025',
+      description: 'Certification covering responsible AI principles, ethical considerations, fairness, transparency, and bias mitigation in artificial intelligence systems.',
+      skills: ['Responsible AI', 'AI Ethics', 'Fairness', 'Bias Mitigation', 'Transparency'],
+      credentialId: 'RAI-GOOGLE-2025',
       verified: true,
-      logo: '⚖️',
-      color: 'from-teal-500 to-blue-500',
-      certificateUrl: '/certificates/responsible-ai-certificate.pdf',
+      logo: '🤖',
+      color: 'from-red-500 to-pink-500',
     },
   ]
 
@@ -139,7 +133,7 @@ const Certifications = () => {
             & Awards
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Professional credentials and achievements that showcase my expertise
+            Industry-recognised credentials in IAM, identity security, and cybersecurity
           </p>
         </motion.div>
 
@@ -224,19 +218,8 @@ const Certifications = () => {
               </div>
 
               {/* Credential ID */}
-              <div className="flex items-center justify-between text-xs text-gray-600 dark:text-gray-500 border-t border-black/10 dark:border-white/10 pt-4">
-                <span>ID: {cert.credentialId}</span>
-                <motion.a
-                  href={cert.certificateUrl || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-1 text-neon-blue hover:text-neon-green transition-colors"
-                >
-                  <ExternalLink className="w-3 h-3" />
-                  View Certificate
-                </motion.a>
+              <div className="text-xs text-gray-500 dark:text-gray-500 border-t border-black/10 dark:border-white/10 pt-4">
+                ID: {cert.credentialId}
               </div>
 
               {/* Glow Effect on Hover */}

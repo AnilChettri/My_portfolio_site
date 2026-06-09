@@ -11,23 +11,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Anil Chhetri - ML Engineer & AI Developer",
-  description: "Building innovative AI solutions and machine learning applications. Passionate about data science, artificial intelligence, and creating impactful technology.",
-  keywords: ["Anil Chhetri", "Machine Learning", "AI Developer", "Data Science", "Python", "Artificial Intelligence", "ML Engineer"],
+  title: "Anil Chhetri - IAM & Identity Security Engineer",
+  description: "AI & ML graduate with hands-on experience in SailPoint IdentityNow (ISC), IAM governance, OIDC/OAuth 2.0, Microsoft Entra ID, and building scalable identity solutions.",
+  keywords: ["Anil Chhetri", "IAM", "Identity Security", "SailPoint", "IdentityNow", "Cybersecurity", "Python", "React", "Next.js", "AI"],
   authors: [{ name: "Anil Chhetri" }],
   creator: "Anil Chhetri",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://anilchhetri.dev",
-    title: "Anil Chhetri - ML Engineer & AI Developer",
-    description: "Building innovative AI solutions and machine learning applications. Passionate about data science and technology.",
+    title: "Anil Chhetri - IAM & Identity Security Engineer",
+    description: "AI & ML graduate with hands-on experience in SailPoint IdentityNow (ISC), IAM governance, OIDC/OAuth 2.0, Microsoft Entra ID, and building scalable identity solutions.",
     siteName: "Anil Chhetri Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anil Chhetri - ML Engineer & AI Developer",
-    description: "Building innovative AI solutions and machine learning applications. Passionate about data science and technology.",
+    title: "Anil Chhetri - IAM & Identity Security Engineer",
+    description: "AI & ML graduate with hands-on experience in SailPoint IdentityNow (ISC), IAM governance, OIDC/OAuth 2.0, Microsoft Entra ID, and building scalable identity solutions.",
     creator: "@anilchhetri",
   },
   robots: {

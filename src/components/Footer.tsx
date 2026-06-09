@@ -36,7 +36,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
               Anil Chhetri
             </h3>
-            <p className="text-gray-400 mt-2">Machine Learning Enthusiast & AI Developer</p>
+            <p className="text-gray-400 mt-2">IAM & Identity Security Engineer</p>
           </motion.div>
 
           {/* Social Links */}
@@ -58,7 +58,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/anil-chhetri-880a8b253/"
+              href="https://www.linkedin.com/in/anil-chettri-880a8b253/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 group magnetic-btn"
@@ -99,22 +99,22 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-wrap justify-center gap-2 text-xs text-gray-500"
           >
-            <span className="px-2 py-1 glass rounded-md">Next.js 14</span>
+            <span className="px-2 py-1 glass rounded-md">Next.js 15</span>
             <span className="px-2 py-1 glass rounded-md">TypeScript</span>
             <span className="px-2 py-1 glass rounded-md">Tailwind CSS</span>
-            <span className="px-2 py-1 glass rounded-md">Framer Motion</span>
-            <span className="px-2 py-1 glass rounded-md">EmailJS</span>
+            <span className="px-2 py-1 glass rounded-md">SailPoint ISC</span>
+            <span className="px-2 py-1 glass rounded-md">PostgreSQL</span>
           </motion.div>
         </div>
 
         {/* Decorative Elements */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div className="w-px h-12 bg-gradient-to-b from-transparent via-neon-blue to-transparent opacity-50" />
         </div>
       </div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="h-full w-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-blue via-transparent to-transparent" />
       </div>
     </footer>

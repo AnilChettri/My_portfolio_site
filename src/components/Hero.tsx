@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Mail } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation'
 import { cn } from '@/lib/utils'
 
@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div className="z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,17 +31,17 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-neon-blue text-xl sm:text-2xl mb-4 font-medium h-8"
+            className="text-neon-blue text-xl sm:text-2xl mb-4 font-medium"
           >
             <TypeAnimation
               sequence={[
-                '👋 Welcome to my Portfolio',
+                '🔐 Identity & Access Management',
                 3000,
-                '📝 Explore my Projects',
+                '⚙️ SailPoint IdentityNow (ISC)',
                 3000,
-                '📈 See my Progress',
+                '🛡️ IAM & Cybersecurity',
                 3000,
-                '🚀 What\'s Next?',
+                '🤖 AI-Powered Security',
                 3000,
               ]}
               wrapper="span"
@@ -64,16 +64,16 @@ const Hero = () => {
                 Anil Chhetri
               </span>
             </h1>
-            <div className="text-2xl sm:text-4xl lg:text-5xl font-bold h-16 flex items-center justify-center">
+            <div className="text-2xl sm:text-4xl lg:text-5xl font-bold flex items-center justify-center min-h-[3rem]">
               <TypeAnimation
                 sequence={[
-                  'Learning by Building',
+                  'IAM & Identity Security',
                   3000,
-                  'Growing through Projects',
+                  'SailPoint IdentityNow (ISC)',
                   3000,
-                  'Exploring ML & AI',
+                  'Full-Stack Development',
                   3000,
-                  'Creating the Future',
+                  'AI & ML Engineering',
                   3000,
                 ]}
                 wrapper="span"
@@ -91,11 +91,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Building the future with{' '}
-            <span className="text-black dark:text-white font-semibold">AI & Machine Learning</span>.{' '}
-            Every project teaches me something new, and{' '}
-            <span className="text-black dark:text-white font-semibold">every challenge</span> brings me closer to{' '}
-            <span className="text-black dark:text-white font-semibold">innovation</span>.
+            Securing identities with{' '}
+            <span className="text-black dark:text-white font-semibold">SailPoint ISC & IAM</span>.{' '}
+            Every project builds on{' '}
+            <span className="text-black dark:text-white font-semibold">identity governance</span> and{' '}
+            <span className="text-black dark:text-white font-semibold">cybersecurity</span>.
           </motion.p>
 
           {/* Action Buttons */}
@@ -146,27 +146,35 @@ const Hero = () => {
             >
               <Github className="w-6 h-6 group-hover:text-neon-blue transition-colors" />
             </a>
+            <a
+              href="https://www.linkedin.com/in/anil-chettri-880a8b253/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 glass rounded-full hover:bg-white/10 transition-all duration-300 group"
+            >
+              <Linkedin className="w-6 h-6 group-hover:text-neon-blue transition-colors" />
+            </a>
           </motion.div>
         </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.8 }}
-        >
-          <motion.button
-            onClick={() => scrollToSection('about')}
-            className="flex flex-col items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-neon-blue transition-colors cursor-pointer"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ArrowDown size={20} />
-          </motion.button>
-        </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.8 }}
+      >
+        <motion.button
+          onClick={() => scrollToSection('about')}
+          className="flex flex-col items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-neon-blue transition-colors cursor-pointer"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <span className="text-sm mb-2">Scroll Down</span>
+          <ArrowDown size={20} />
+        </motion.button>
+      </motion.div>
     </section>
   )
 }

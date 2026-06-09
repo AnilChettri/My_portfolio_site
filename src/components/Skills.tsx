@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Database, Brain, TrendingUp } from 'lucide-react'
+import { Code, Database, TrendingUp, Shield } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 
 const Skills = () => {
@@ -11,48 +11,54 @@ const Skills = () => {
   })
 
   const skills = [
-    { name: 'Python', category: 'language', icon: '🐍' },
-    { name: 'SQL', category: 'database', icon: '🗃️' },
-    { name: 'HTML & CSS', category: 'frontend', icon: '🎨' },
-    { name: 'MongoDB', category: 'database', icon: '🍃' },
-    { name: 'Machine Learning', category: 'ai', icon: '🤖' },
-    { name: 'TensorFlow', category: 'ai', icon: '🧠' },
-    { name: 'Scikit-learn', category: 'ai', icon: '📈' },
-    { name: 'Data Analysis', category: 'data', icon: '📊' },
-    { name: 'Predictive Modeling', category: 'ai', icon: '🎯' },
-    { name: 'Data Preprocessing', category: 'data', icon: '🔧' },
-    { name: 'Feature Engineering', category: 'data', icon: '⚙️' },
-    { name: 'Model Evaluation', category: 'ai', icon: '📋' },
-    { name: 'Data Visualization', category: 'data', icon: '📈' },
-    { name: 'Leadership', category: 'soft', icon: '👥' },
-    { name: 'Communication', category: 'soft', icon: '💬' },
-    { name: 'Problem Solving', category: 'soft', icon: '🧩' },
+    { name: 'SailPoint ISC', category: 'iam', icon: '🔐' },
+    { name: 'Microsoft Entra ID', category: 'iam', icon: '🛡️' },
+    { name: 'OIDC / OAuth 2.0', category: 'iam', icon: '🔑' },
+    { name: 'IGA & RBAC', category: 'iam', icon: '⚙️' },
+    { name: 'MFA & SSO', category: 'iam', icon: '🔒' },
+    { name: 'Identity Lifecycle', category: 'iam', icon: '🔄' },
+    { name: 'Python', category: 'programming', icon: '🐍' },
+    { name: 'SQL', category: 'programming', icon: '🗃️' },
+    { name: 'JavaScript', category: 'programming', icon: '🟨' },
+    { name: 'TypeScript', category: 'programming', icon: '📘' },
+    { name: 'Pandas & NumPy', category: 'programming', icon: '📊' },
+    { name: 'Scikit-Learn', category: 'programming', icon: '🧠' },
+    { name: 'React', category: 'frontend', icon: '⚛️' },
+    { name: 'Next.js', category: 'frontend', icon: '▲' },
+    { name: 'Express.js', category: 'frontend', icon: '🚀' },
+    { name: 'REST APIs', category: 'frontend', icon: '🔗' },
+    { name: 'Firebase Auth', category: 'frontend', icon: '🔥' },
+    { name: 'PostgreSQL', category: 'frontend', icon: '🐘' },
+    { name: 'Git', category: 'tools', icon: '🔄' },
+    { name: 'n8n', category: 'tools', icon: '⚡' },
+    { name: 'Jupyter', category: 'tools', icon: '📓' },
+    { name: 'Postman', category: 'tools', icon: '📮' },
   ]
 
   const skillCategories = [
     {
-      title: 'Programming & Database',
-      icon: <Code className="w-6 h-6" />,
+      title: 'IAM & Identity Security',
+      icon: <Shield className="w-6 h-6" />,
       color: 'from-neon-blue to-neon-purple',
-      skills: skills.filter(skill => ['language', 'database', 'frontend'].includes(skill.category))
+      skills: skills.filter(skill => skill.category === 'iam')
     },
     {
-      title: 'Machine Learning & AI',
-      icon: <Brain className="w-6 h-6" />,
+      title: 'Programming & Data',
+      icon: <Code className="w-6 h-6" />,
       color: 'from-neon-purple to-neon-pink',
-      skills: skills.filter(skill => skill.category === 'ai')
+      skills: skills.filter(skill => skill.category === 'programming')
     },
     {
-      title: 'Data Science & Analytics',
-      icon: <TrendingUp className="w-6 h-6" />,
-      color: 'from-neon-pink to-neon-green',
-      skills: skills.filter(skill => skill.category === 'data')
-    },
-    {
-      title: 'Leadership & Soft Skills',
+      title: 'Frontend & Backend',
       icon: <Database className="w-6 h-6" />,
+      color: 'from-neon-pink to-neon-green',
+      skills: skills.filter(skill => skill.category === 'frontend')
+    },
+    {
+      title: 'Tools & Platforms',
+      icon: <TrendingUp className="w-6 h-6" />,
       color: 'from-neon-green to-neon-blue',
-      skills: skills.filter(skill => skill.category === 'soft')
+      skills: skills.filter(skill => skill.category === 'tools')
     }
   ]
 
@@ -101,7 +107,7 @@ const Skills = () => {
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            IAM platforms, programming languages, and tools I work with
           </p>
         </motion.div>
 

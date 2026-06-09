@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Download, Github, Linkedin, User } from 'lucide-react'
+import { Download, GraduationCap, Briefcase, Award, Languages } from 'lucide-react'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 import { cn } from '@/lib/utils'
@@ -17,7 +17,7 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   }
@@ -28,15 +28,22 @@ const About = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.7,
         ease: [0.6, -0.05, 0.01, 0.99] as [number, number, number, number],
       },
     },
   }
 
+  const stats = [
+    { value: '4', label: 'Internships', icon: Briefcase, color: 'text-blue-500' },
+    { value: '6', label: 'Certifications', icon: Award, color: 'text-purple-500' },
+    { value: '3', label: 'Languages', icon: Languages, color: 'text-pink-500' },
+  ]
+
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -46,7 +53,7 @@ const About = () => {
         >
           <motion.div variants={itemVariants} className="flex justify-center mb-6">
             <div className="p-3 glass rounded-full">
-              <User className="w-8 h-8 text-neon-blue" />
+              <GraduationCap className="w-8 h-8 text-neon-blue" />
             </div>
           </motion.div>
           <motion.h2
@@ -60,40 +67,37 @@ const About = () => {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-700 dark:text-gray-300 text-xl max-w-2xl mx-auto"
+            className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
           >
-            Passionate developer creating innovative solutions
+            IAM & Identity Security Engineer building scalable solutions
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Profile Image */}
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="relative flex justify-center items-center px-4 py-8 sm:px-6 sm:py-0 md:px-4 lg:px-0 order-2 lg:order-1"
+            className="lg:col-span-2 flex justify-center"
           >
-            <div className="relative mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 xl:w-64 xl:h-64 max-w-[50vw] max-h-[50vw]">
-              {/* Glowing Border */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink p-0.5 animate-spin-slow">
-                <div className="w-full h-full rounded-full bg-white dark:bg-black" />
-              </div>
+            <div className="relative">
+              {/* Decorative background */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-neon-blue/20 via-neon-purple/20 to-neon-pink/20 rounded-full blur-2xl" />
               
-              {/* Profile Image */}
-              <div className="absolute inset-1 rounded-full overflow-hidden backdrop-blur-sm">
+              {/* Image container with border */}
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-white/20 shadow-xl shadow-black/10 dark:shadow-white/5">
                 <Image
-                  src="/anil-profile.png"
-                  alt="Anil Chhetri - AI & ML Student"
+                  src="/gemini-profile.png"
+                  alt="Anil Chhetri - IAM & Identity Security Engineer"
                   width={512}
                   height={512}
-                  className="w-full h-full object-cover object-center rounded-full"
+                  className="w-full h-full object-cover object-center"
                   quality={95}
                   priority
-                  sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 176px, (max-width: 1280px) 224px, 256px"
+                  sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
                 />
               </div>
-              
             </div>
           </motion.div>
 
@@ -102,95 +106,70 @@ const About = () => {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="space-y-6 order-1 lg:order-2"
+            className="lg:col-span-3 space-y-6"
           >
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-black dark:text-white">
-                AI & Machine Learning{' '}
-                <span className="bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                  Explorer
+                IAM & Identity{' '}
+                <span className="bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+                  Security Engineer
                 </span>
               </h3>
-              <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed text-base sm:text-lg">
+              <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
                 <p>
-                  Currently pursuing my Bachelor&apos;s in Artificial Intelligence & Machine Learning at 
-                  Sri Sairam College of Engineering, Bangalore. I believe in learning through building 
-                  and have developed a strong foundation in Python, ML algorithms, and data analysis.
+                  AI & ML graduate from Sri Sairam College of Engineering, Bangalore, with hands-on 
+                  experience in Identity and Access Management, SailPoint IdentityNow (ISC), and 
+                  enterprise authentication systems. Proficient in OIDC, OAuth 2.0, Microsoft Entra ID, 
+                  Python, SQL, React, and Next.js through academic projects and four internships.
                 </p>
                 <p>
-                  My journey is driven by curiosity and hands-on experience. From developing chatbots 
-                  to building predictive models and expense tracking applications, I explore AI&apos;s potential 
-                  through practical projects that solve real-world problems.
+                  Holds the SailPoint ISC Leader Certificate and passionate about IAM governance, IGA, 
+                  cybersecurity, and building scalable identity solutions. From building iTrace (an 
+                  identity security assessment platform) to developing AI-powered security tools, I 
+                  explore technology through practical, real-world projects.
                 </p>
                 <p>
-                  Looking ahead, I&apos;m focused on contributing to innovative AI solutions, collaborating 
-                  with teams that push boundaries, and continuing to learn from every project and challenge 
-                  that comes my way.
+                  Looking ahead, I&apos;m focused on contributing to innovative identity security solutions, 
+                  collaborating with teams that push boundaries in IAM and cybersecurity, and continuing 
+                  to learn from every project and challenge that comes my way.
                 </p>
               </div>
             </motion.div>
 
-            {/* Action Buttons */}
-            <motion.div 
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 pt-6"
-            >
+            {/* Resume Button */}
+            <motion.div variants={itemVariants}>
               <a
-                href="/Anil_Chhetri_Resume_Updated.pdf"
-                download="Anil_Chhetri_Resume_Updated.pdf"
+                href="/ANIL_CHHETRI_RESUME.pdf"
+                download="ANIL_CHHETRI_RESUME.pdf"
                 className={cn(
-                  "group relative inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium",
-                  "magnetic-btn",
-                  "hover:bg-gray-800 dark:hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg"
+                  "group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg font-medium",
+                  "hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/25 transition-all duration-300"
                 )}
               >
                 <Download size={18} />
                 Download Resume
               </a>
-
-              <div className="flex gap-3">
-                <a
-                  href="https://github.com/AnilChettri"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "p-3 border border-black/30 dark:border-white/30 rounded-lg text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group",
-                    "magnetic-btn"
-                  )}
-                >
-                  <Github className="w-6 h-6 transition-colors" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/anil-chhetri-880a8b253/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "p-3 border border-black/30 dark:border-white/30 rounded-lg text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group",
-                    "magnetic-btn"
-                  )}
-                >
-                  <Linkedin className="w-6 h-6 transition-colors" />
-                </a>
-              </div>
             </motion.div>
 
             {/* Stats */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
-              className="grid grid-cols-3 gap-4 pt-8"
+              className="grid grid-cols-3 gap-4 pt-4"
             >
-              <div className="text-center p-4 glass rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-neon-blue mb-1">5+</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Projects Built</div>
-              </div>
-              <div className="text-center p-4 glass rounded-lg">
-                <div className="text-2xl font-bold text-purple-600 dark:text-neon-purple mb-1">6</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Certifications</div>
-              </div>
-              <div className="text-center p-4 glass rounded-lg">
-                <div className="text-2xl font-bold text-pink-600 dark:text-neon-pink mb-1">3</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Languages</div>
-              </div>
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="relative p-4 glass rounded-xl text-center group hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300"
+                >
+                  <stat.icon className={cn("w-5 h-5 mx-auto mb-2", stat.color)} />
+                  <div className={cn("text-2xl font-bold mb-0.5", stat.color)}>
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
         </div>

@@ -8,7 +8,6 @@ import Image from 'next/image'
 import { supabase } from '@/lib/supabase'
 import { cn } from '@/lib/utils'
 import { Database } from '@/types/database'
-import ImageGallery from './ImageGallery'
 
 type Project = Database['public']['Tables']['projects']['Row']
 
@@ -21,37 +20,62 @@ const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [galleryOpen, setGalleryOpen] = useState(false)
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  
 
   useEffect(() => {
     // Sample fallback data in case Supabase is not accessible
     const fallbackProjects: Project[] = [
       {
         id: '1',
-        title: 'Smart Expense Tracker',
-        summary: 'A comprehensive expense tracking application built with Python. Features intelligent categorization, expense analysis, and budget management with an intuitive user interface.',
-        tags: ['Python', 'HTML', 'CSS', 'Data Analysis', 'UI/UX'],
-        year: 2024,
-        image_url: '/projects/expense-tracker-dashboard.png',
-        demo_url: null,
-        source_url: 'https://github.com/AnilChettri/expense-tracker',
+        title: 'iTrace – Identity Security Assessment Platform',
+        summary: 'A web platform to assess organisational identity security posture across domains including IGA, PAM, authentication, cloud security, and ITDR. Features assessment questionnaires mapped to compliance frameworks, Microsoft Entra ID integration with OIDC, and an AI assistant using RAG for identity security recommendations.',
+        tags: ['Next.js 15', 'TypeScript', 'PostgreSQL', 'Firebase Auth', 'OIDC', 'RAG'],
+        year: 2026,
+        image_url: '/projects/itrace.png',
+        demo_url: 'https://i-trace-wje4.vercel.app/',
+        source_url: 'https://github.com/AnilChettri/iTrace',
         featured: true,
-        created_at: '2024-07-01T00:00:00Z',
-        updated_at: '2024-08-31T00:00:00Z',
+        created_at: '2026-01-01T00:00:00Z',
+        updated_at: '2026-06-01T00:00:00Z',
       },
       {
         id: '2',
-        title: 'AquaGuard Water Management',
-        summary: 'A water quality monitoring and management system that helps track water usage, quality metrics, and provides alerts for maintenance and optimization.',
-        tags: ['Python', 'Data Monitoring', 'IoT', 'Analytics'],
-        year: 2024,
-        image_url: '/projects/aquaguard-main.png',
-        demo_url: null,
-        source_url: 'https://github.com/AnilChettri/aquaguard-system',
+        title: 'LUMORA – AI Wellness Platform',
+        summary: 'A full-stack wellness platform with mood tracking, guided breathing exercises, journaling, and wellness support features. Built with reusable React components, protected API routes using session-based authentication, and Web Audio API for breathing guidance and meditation audio feedback.',
+        tags: ['React', 'TypeScript', 'Express.js', 'Web Audio API', 'Auth'],
+        year: 2025,
+        image_url: '/projects/lumora.png',
+        demo_url: 'https://lumora-tawny.vercel.app/',
+        source_url: 'https://github.com/AnilChettri/LUMORA',
         featured: true,
-        created_at: '2024-05-15T00:00:00Z',
-        updated_at: '2024-06-30T00:00:00Z',
+        created_at: '2025-06-01T00:00:00Z',
+        updated_at: '2025-12-01T00:00:00Z',
+      },
+      {
+        id: '3',
+        title: 'FarmGuard – Smart Crop Advisory System',
+        summary: 'A crop recommendation system using soil, climate, and market datasets. Integrated weather APIs and preprocessing pipelines to improve prediction quality. Empowers small & marginal farmers with localized crop advisory, weather alerts, market insights, and AI-powered assistance.',
+        tags: ['Next.js', 'Python', 'Machine Learning', 'REST APIs', 'Data Science'],
+        year: 2026,
+        image_url: '/projects/farmguard.png',
+        demo_url: 'https://farmguard-d7.vercel.app/',
+        source_url: 'https://github.com/AnilChettri/Krishi-Bandhu',
+        featured: false,
+        created_at: '2026-01-01T00:00:00Z',
+        updated_at: '2026-06-01T00:00:00Z',
+      },
+      {
+        id: '4',
+        title: 'Hill Travel – Travel & Tourism Portal',
+        summary: 'A travel and tourism portal showcasing hill station destinations, travel packages, and booking information for travellers exploring mountain destinations.',
+        tags: ['Next.js', 'Travel', 'Tourism', 'UI/UX'],
+        year: 2025,
+        image_url: '/projects/hilltravel.png',
+        demo_url: 'https://www.hilltravel.in/',
+        source_url: null,
+        featured: false,
+        created_at: '2025-01-01T00:00:00Z',
+        updated_at: '2025-12-01T00:00:00Z',
       },
     ]
     
@@ -115,34 +139,7 @@ const Projects = () => {
   }
 
   const featuredProjects = projects.filter(project => project.featured)
-  // const otherProjects = projects.filter(project => !project.featured)
-
-  // Project image galleries
-  const getProjectImages = (projectId: string) => {
-    switch (projectId) {
-      case '1': // Expense Tracker
-        return [
-          '/projects/expense-tracker-dashboard.png',
-          '/projects/expense-tracker-add.png',
-          '/projects/expense-tracker-analytics.png',
-          '/projects/expense-tracker-categories.png',
-          '/projects/expense-tracker-reports.png',
-          '/projects/expense-tracker-settings.png',
-        ]
-      case '2': // AquaGuard
-        return [
-          '/projects/aquaguard-main.png',
-          '/projects/aquaguard-details.png',
-        ]
-      default:
-        return ['/projects/default-project.png']
-    }
-  }
-
-  const openGallery = (project: Project) => {
-    setSelectedProject(project)
-    setGalleryOpen(true)
-  }
+  const otherProjects = projects.filter(project => !project.featured)
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -161,7 +158,7 @@ const Projects = () => {
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-black dark:text-white">
-            Featured{' '}
+            My{' '}
             <span className="bg-gradient-to-r from-neon-purple to-neon-pink bg-clip-text text-transparent">
               Projects
             </span>
@@ -179,7 +176,7 @@ const Projects = () => {
         {loading ? (
           /* Loading State */
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {[1, 2, 3, 4].map((i) => (
               <div key={i} className="bg-white/80 dark:bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-black/10 dark:border-white/10 animate-pulse">
                 <div className="w-full h-48 bg-black/10 dark:bg-white/10 rounded-lg mb-4" />
                 <div className="h-6 bg-black/10 dark:bg-white/10 rounded mb-2" />
@@ -276,6 +273,20 @@ const Projects = () => {
 
                       {/* Action Buttons */}
                       <div className="flex gap-3 pt-2">
+                        {project.demo_url && (
+                          <a
+                            href={project.demo_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                              "flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-neon-green to-neon-blue rounded-lg text-white font-medium",
+                              "magnetic-btn hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-300"
+                            )}
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            Live Demo
+                          </a>
+                        )}
                         {project.source_url && (
                           <a
                             href={project.source_url}
@@ -290,16 +301,6 @@ const Projects = () => {
                             View Code
                           </a>
                         )}
-                        <button
-                          onClick={() => openGallery(project)}
-                          className={cn(
-                            "flex items-center gap-2 px-6 py-3 glass border border-black/20 dark:border-white/20 rounded-lg text-black dark:text-white font-medium",
-                            "magnetic-btn hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
-                          )}
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          View Images
-                        </button>
                       </div>
                     </div>
 
@@ -310,6 +311,111 @@ const Projects = () => {
               </motion.div>
             )}
 
+            {/* Other Projects */}
+            {otherProjects.length > 0 && (
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {otherProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    variants={cardVariants}
+                    className="group relative bg-white/80 dark:bg-black/20 backdrop-blur-sm p-6 rounded-xl border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 tilt-card overflow-hidden"
+                    whileHover={{ 
+                      scale: 1.02, 
+                      rotateY: 2, 
+                      rotateX: 2,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    {/* Project Image */}
+                    <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                      <Image
+                        src={project.image_url}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+                    </div>
+
+                    {/* Project Info */}
+                    <div className="space-y-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-black dark:text-white group-hover:text-neon-purple transition-colors">
+                          {project.title}
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mt-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>{project.year}</span>
+                        </div>
+                      </div>
+
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed line-clamp-3">
+                        {project.summary}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, tagIndex) => (
+                          <motion.span
+                            key={tag}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={inView ? { opacity: 1, scale: 1 } : {}}
+                            transition={{ 
+                              duration: 0.4, 
+                              delay: index * 0.1 + tagIndex * 0.05 
+                            }}
+                            className="px-2 py-1 text-xs bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/30 rounded-full text-neon-blue"
+                          >
+                            {tag}
+                          </motion.span>
+                        ))}
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex gap-2 pt-1">
+                        {project.demo_url && (
+                          <a
+                            href={project.demo_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                              "flex items-center gap-1 px-4 py-2 bg-gradient-to-r from-neon-green to-neon-blue rounded-lg text-white text-sm font-medium",
+                              "magnetic-btn hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-300"
+                            )}
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                            Live Demo
+                          </a>
+                        )}
+                        {project.source_url && (
+                          <a
+                            href={project.source_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                              "flex items-center gap-1 px-4 py-2 bg-gradient-to-r from-neon-purple to-neon-pink rounded-lg text-white text-sm font-medium",
+                              "magnetic-btn hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all duration-300"
+                            )}
+                          >
+                            <Github className="w-3 h-3" />
+                            Code
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Hover Gradient */}
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-neon-purple/5 via-neon-pink/5 to-neon-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
           </>
         )}
 
@@ -321,10 +427,10 @@ const Projects = () => {
           className="text-center mt-16"
         >
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Want to see more projects and my code?
+            Want to see more of my work?
           </p>
           <a
-            href="https://github.com/anilchhetri"
+            href="https://github.com/AnilChettri"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
@@ -338,15 +444,6 @@ const Projects = () => {
           </a>
         </motion.div>
 
-        {/* Image Gallery Modal */}
-        {selectedProject && (
-          <ImageGallery
-            images={getProjectImages(selectedProject.id)}
-            isOpen={galleryOpen}
-            onClose={() => setGalleryOpen(false)}
-            title={selectedProject.title}
-          />
-        )}
       </div>
     </section>
   )
