@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation'
 import { cn } from '@/lib/utils'
@@ -26,6 +27,30 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-6"
+          >
+            <div className="relative inline-block">
+              <div className="absolute -inset-2 bg-gradient-to-r from-neon-blue/30 via-neon-purple/30 to-neon-pink/30 rounded-full blur-xl" />
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-white/30 shadow-xl mx-auto">
+                <Image
+                  src="/gemini-profile.png"
+                  alt="Anil Chhetri"
+                  width={256}
+                  height={256}
+                  className="w-full h-full object-cover object-center"
+                  quality={95}
+                  priority
+                  sizes="(max-width: 640px) 112px, (max-width: 768px) 128px, 144px"
+                />
+              </div>
+            </div>
+          </motion.div>
+
           {/* Greeting with Typing Animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
